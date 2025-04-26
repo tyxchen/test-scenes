@@ -1,0 +1,6 @@
+# Load scene
+sceneBuilder.importScene("closed_cornell_box.gltf")
+
+# Adjust emissives to correct for lack of KHR_materials_emissive_strength support
+emissive = sceneBuilder.getMaterial("Light")
+emissive.emissiveFactor *= 100
