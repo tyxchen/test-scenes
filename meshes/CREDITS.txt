@@ -1,3 +1,14 @@
-armadillo.obj		Alec Jacobson/Stanford		https://github.com/alecjacobson/common-3d-test-models/blob/master/data/armadillo.obj
-bunny_watertight.obj	Christopher Batty/Stanford	https://cs.uwaterloo.ca/~c2batty/bunny_watertight.obj
-dragon.obj		Morgan McGuire/Stanford		https://casual-effects.com/data/index.html
+CREDITS
+=======
+
+armadillo.obj		Alec Jacobson/Stanford			https://github.com/alecjacobson/common-3d-test-models/blob/master/data/armadillo.obj
+bunny_watertight.obj	Christopher Batty/Stanford		https://cs.uwaterloo.ca/~c2batty/bunny_watertight.obj
+dragon.obj		Terry Chen/Morgan McGuire/Stanford	https://casual-effects.com/data/index.html
+
+NOTES
+=====
+
+dragon.obj
+
+  - Disconnected vertices merged from OBJ provided by Morgan McGuire, and
+    normals reweighted/recalculated in Blender.
