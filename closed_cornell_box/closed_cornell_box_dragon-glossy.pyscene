@@ -1,0 +1,14 @@
+sceneBuilder.importScene("closed_cornell_box.pyscene")
+
+dragonMesh = TriangleMesh.createFromFile('../meshes/dragon.obj')
+
+dragonMat = StandardMaterial('Dragon')
+dragonMat.doubleSided = True
+dragonMat.baseColor = float4(0.8, 0.8, 0.8, 1.0)
+dragonMat.metallic = 1.0
+dragonMat.roughness = 0.2
+
+sceneBuilder.addMeshInstance(
+	sceneBuilder.addNode('Dragon', Transform(scaling=float3(3.0), rotationEuler=float3(0.0, 1.7, 0.0), translation=float3(0, -1.4256, 0))),
+	sceneBuilder.addTriangleMesh(dragonMesh, dragonMat)
+)
