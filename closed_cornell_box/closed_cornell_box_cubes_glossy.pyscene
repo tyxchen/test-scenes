@@ -1,5 +1,5 @@
 # Load scene
-sceneBuilder.importScene("closed_cornell_box.pyscene")
+sceneBuilder.importScene("closed_cornell_box_cubes.pyscene")
 
 # Adjust floor
 floor = sceneBuilder.getMaterial("Floor")

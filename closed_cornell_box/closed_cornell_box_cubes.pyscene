@@ -1,0 +1,30 @@
+sceneBuilder.importScene("closed_cornell_box.pyscene")
+
+cubeMesh = TriangleMesh.createCube()
+cubeMat = StandardMaterial('Steel')
+cubeMat.doubleSided = True
+cubeMat.baseColor = float4(0.327483206987381, 0.327483206987381, 0.327483206987381, 1.0)
+cubeMat.metallic = 0.3056994676589966
+cubeMat.roughness = 0.38082900643348694
+
+sceneBuilder.addMeshInstance(
+	sceneBuilder.addNode('LeftCube',
+		Transform(
+			scaling=float3(1.20948, 2.37867, 1.20948),
+			rotationEuler=float3(0.0, 0.194478, 0.0),
+			translation=float3(-0.944187, -1.07731, -1.01132)
+		)
+	),
+	sceneBuilder.addTriangleMesh(cubeMesh, cubeMat)
+)
+
+sceneBuilder.addMeshInstance(
+	sceneBuilder.addNode('RightCube',
+		Transform(
+			scaling=float3(1.20948, 1.52964, 1.20948),
+			rotationEuler=float3(0.0, -0.191986, 0.0),
+			translation=float3(0.959421, -1.62761, 0.723082)
+		)
+	),
+	sceneBuilder.addTriangleMesh(cubeMesh, cubeMat)
+)
