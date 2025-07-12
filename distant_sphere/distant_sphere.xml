@@ -1,0 +1,45 @@
+<scene version="3.0.0">
+	<default name="spp" value="128"/>
+	<default name="width" value="256"/>
+	<default name="height" value="256"/>
+	<default name="max_depth" value="3"/>
+
+	<integrator id="integrator" type="path">
+		<integer name="max_depth" value="$max_depth"/>
+	</integrator>
+
+	<sensor type="perspective" id="camera">
+		<float name="fov" value="50"/>
+		<transform name="to_world">
+			<lookat origin="0,-10,0" target="0,0,0" up="0,0,1"/>
+		</transform>
+
+		<sampler type="independent">
+			<integer name="sample_count" value="$spp"/>
+		</sampler>
+
+		<film type="hdrfilm">
+			<integer name="width" value="$width"/>
+			<integer name="height" value="$height"/>
+			<rfilter type="gaussian">
+				<float name="stddev" value="0.5"/>
+			</rfilter>
+		</film>
+	</sensor>
+
+	<bsdf type="roughconductor" id="mat">
+		<string name="distribution" value="ggx"/>
+		<float name="alpha" value="0.1"/>
+	</bsdf>
+
+	<shape type="sphere" id="obj">
+		<transform name="to_world">
+			<scale value="1"/>
+		</transform>
+		<ref id="mat"/>
+	</shape>
+
+	<emitter type="envmap">
+		<string name="filename" value="../envmaps/golden_gate_hills_2k.hdr"/>
+	</emitter>
+</scene>
